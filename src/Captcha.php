@@ -55,6 +55,6 @@ class Captcha extends \booosta\ui\UI
     $binary = str_pad($binary, 32, "0", STR_PAD_LEFT); 
     $binary = $binary.str_repeat("0", $steps); 
     $binary = substr($binary, strlen($binary) - 32); 
-    return ($binary{0} == "0" ? bindec($binary) : -(pow(2, 31) - bindec(substr($binary, 1)))); 
+    return ($binary[0] == "0" ? bindec($binary) : -(pow(2, 31) - bindec(substr($binary, 1)))); 
   }
 }
